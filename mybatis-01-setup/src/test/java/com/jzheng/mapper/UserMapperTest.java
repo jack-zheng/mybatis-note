@@ -10,7 +10,9 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserMapperTest {
     @Test
@@ -34,6 +36,56 @@ public class UserMapperTest {
         for (User user : users) {
             System.out.println(user);
         }
+        sqlSession.close();
+    }
+
+    @Test
+    public void test_add() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        User user = new User(5, "t0928", "pwd");
+
+        int ret = sqlSession.getMapper(UserMapper.class).addUser(user);
+        System.out.println(ret);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void test_delete() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        int ret = sqlSession.getMapper(UserMapper.class).deleteUser(5);
+        System.out.println(ret);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void test_update() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        User user = new User(2, "change", "pwdchange");
+        int ret = sqlSession.getMapper(UserMapper.class).updateUser(user);
+        System.out.println(ret);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void test_getUserById() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        User ret = sqlSession.getMapper(UserMapper.class).getUserById(1);
+        System.out.println(ret);
+        sqlSession.close();
+    }
+
+    @Test
+    public void test_getUserByMap() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", 1);
+        User ret = sqlSession.getMapper(UserMapper.class).getUserByMap(map);
+        System.out.println(ret);
         sqlSession.close();
     }
 }
