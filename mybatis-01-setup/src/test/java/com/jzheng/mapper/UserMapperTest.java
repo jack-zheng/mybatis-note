@@ -42,7 +42,7 @@ public class UserMapperTest {
     @Test
     public void test_add() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
-        User user = new User(5, "t0928", "pwd");
+        User user = new User(4, "t0928", "pwd");
 
         int ret = sqlSession.getMapper(UserMapper.class).addUser(user);
         System.out.println(ret);
@@ -86,6 +86,20 @@ public class UserMapperTest {
         map.put("id", 1);
         User ret = sqlSession.getMapper(UserMapper.class).getUserByMap(map);
         System.out.println(ret);
+        sqlSession.close();
+    }
+
+    @Test
+    public void test_limit() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("startIndex", 2);
+        map.put("pageSize", 2);
+        List<User> ret = sqlSession.getMapper(UserMapper.class).getUsersWithLimit(map);
+        for (User u : ret) {
+            System.out.println(u);
+        }
         sqlSession.close();
     }
 }

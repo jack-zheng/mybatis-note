@@ -17,4 +17,7 @@ public interface UserMapper {
 
     // Map as parameter
     User getUserByMap(Map map);
+
+    // Limit query
+    List<User> getUsersWithLimit(Map map);
 }
