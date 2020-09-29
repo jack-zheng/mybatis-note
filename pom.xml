@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mybatis-01-setup</module>
+        <module>mybatis-02-configuration</module>
+        <module>mybatis-03-logging</module>
     </modules>
 
     <properties>
@@ -37,6 +39,14 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
