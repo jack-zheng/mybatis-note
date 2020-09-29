@@ -12,6 +12,7 @@
         <module>mybatis-01-setup</module>
         <module>mybatis-02-configuration</module>
         <module>mybatis-03-logging</module>
+        <module>mybatis-04-anno</module>
     </modules>
 
     <properties>
