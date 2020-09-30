@@ -13,6 +13,8 @@
         <module>mybatis-02-configuration</module>
         <module>mybatis-03-logging</module>
         <module>mybatis-04-anno</module>
+        <module>mybatis-05-resultmap</module>
+        <module>mybatis-05-resultmap02</module>
     </modules>
 
     <properties>
