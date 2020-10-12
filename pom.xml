@@ -17,6 +17,7 @@
         <module>mybatis-05-resultmap02</module>
         <module>mybatis-06-dynamic-sql</module>
         <module>mybatis-07-cache</module>
+        <module>mybatis-00-jdbc</module>
     </modules>
 
     <properties>
