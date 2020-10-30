@@ -18,6 +18,7 @@
         <module>mybatis-06-dynamic-sql</module>
         <module>mybatis-07-cache</module>
         <module>mybatis-00-jdbc</module>
+        <module>mybatis-08-xml-parser</module>
     </modules>
 
     <properties>
